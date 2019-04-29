@@ -8,6 +8,7 @@ namespace vision_tracker
     {
         image_subscriber_ptr_ = std::make_shared<image_transport::SubscriberFilter>(it_,"image_raw", 1);
         detection_sub_ptr__ = std::make_shared<message_filters::Subscriber<vision_msgs::Detection2DArray> >(nh_,"detection",1);
+        kcf_tracker_ptr_ = cv::TrackerKCF::create();
         sync_ptr_ = std::make_shared<message_filters::Synchronizer<SyncPolicy> >(SyncPolicy(10), *image_subscriber_ptr_, *detection_sub_ptr__);
         sync_ptr_->registerCallback(boost::bind(&VisionTracker::detectionCallback,this,_1, _2));
     }

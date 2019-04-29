@@ -23,7 +23,8 @@ catkin_package(
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 add_executable(vision_tracker_node src/vision_tracker_node.cpp src/vision_tracker.cpp)
-target_link_libraries(vision_tracker_node ${catkin_LIBRARIES})
+target_link_libraries(vision_tracker_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

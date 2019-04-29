@@ -5,6 +5,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/opencv.hpp>
+#include <opencv2/tracking/tldDataset.hpp>
 #include <opencv2/tracking.hpp>
 
 // Headers in ROS
@@ -37,6 +38,7 @@ namespace vision_tracker
         ros::NodeHandle nh_;
         ros::NodeHandle pnh_;
         image_transport::ImageTransport it_;
+        cv::Ptr<cv::TrackerKCF> kcf_tracker_ptr_;
     };
 }
 #endif  //VISION_TRACKER_VISION_TRACKER_H_INCLUDED
