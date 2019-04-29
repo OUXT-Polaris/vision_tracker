@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="vision_tracker" type="vision_tracker_node" name="vision_tracker_node" output="log" respawn="false" respawn_delay="0">
+    </node>
+</launch>
